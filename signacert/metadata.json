@@ -1,0 +1,14 @@
+{
+  "name": "puppet-signacert",
+  "version": "1.0.0",
+  "author": "Brian Woodard (Global Cash Card)",
+  "summary": "Ensures SignaCert file is present at /etc/example"
+  "license": "Apache 2.0",
+  "source": "https://sd-vcs1.inside.globalcashcard.com/bwoodard/SignaCert",
+  "project_page": "https://sd-vcs1.inside.globalcashcard.com/bwoodard/SignaCert",
+  "issues_url": "https://sd-vcs1.inside.globalcashcard.com/bwoodard/SignaCert",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
