@@ -50,4 +50,4 @@
       creates   => '/opt/signacert/jre/',
       logoutput => true,
   }
-    
+}    
