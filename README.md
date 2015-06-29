@@ -14,6 +14,6 @@ This module installs the Signacert agent on target hosts. This module is only to
 
 SignaCert monitors changes in files and updates/patches.
 
-## Release Notes/Contributors/Etc **Optional**
+## Release Notes/Contributors/Etc
 
 1.0 - Initial release
