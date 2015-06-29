@@ -36,7 +36,7 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class signacert {
-  user { "signacert":
+  user { 'signacert':
     ensure     => 'present',
     gid        => 'signacert',
     groups     => ['wheel'],
@@ -48,14 +48,14 @@ class signacert {
     ensure => 'present',
     type   => 'ssh-rsa',
     key    => 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAy5WxN4CcVdhLNkIU4eKsJJzyyPmXmnD+tAa4gkigLws/G0/jF8yNu8kZZlH9D44Z06Vf/7smX6GEb28IjF7892cfMszK19Yy4cH3gHD59wXUEPv/0ELeKJv2Efiusi55bFopdH8bgpvlgYHq2bto7IGLiyDH5Pad9QRiDH9i9B9fmVAYYITdb8x4ZlXBo3mfEJ4gfwo38a9ZBbSUO56kfu/iMPgvRZKepOsV1Ih3pkpnd4BdK/GDs6VSL3vbVly+U21Qg8zL3K5gJptTD2VudXLp95JdsQsKEzlhgUybAHsDwIZj6LZe5JXvvqWjwFZOlQlfHF42tN1BNd8kaWX5yQ== signacert@sd-staging-cardholder1.inside.globalcashcard.com',
-   user    => 'signacert',
+    user   => 'signacert',
   }
   file { '/tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz':
-    ensure  => 'present',
-    source  => 'puppet:///modules/signacert/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
-    mode    => '0755',
-    owner   => 'signacert',
-    group   => 'wheel',
+    ensure => 'present',
+    source => 'puppet:///modules/signacert/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
+    mode   => '0755',
+    owner  => 'signacert',
+    group  => 'wheel',
   }
   exec { 'signa_oval_install':
     command   => 'tar -xzvf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz -C /opt; rm -rf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
