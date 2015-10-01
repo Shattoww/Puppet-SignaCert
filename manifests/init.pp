@@ -9,8 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2014 Global Cash Card, unless otherwise noted.
+# Copyright 2015 Global Cash Card, unless otherwise noted.
 #
+class signacert {
   user { 'signacert':
     ensure     => 'present',
     gid        => 'signacert',
@@ -32,24 +33,25 @@
       mode   => '0755',
       owner  => 'signacert',
       group  => 'wheel',
-  }
+    }
     exec { 'signa_oval_install':
       command   => 'tar -xzvf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz -C /opt; rm -rf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
       require   => '/tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
       creates   => '/opt/signacert/signaclient/',
       logoutput => true,
-  }
+    }
     file { '/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz':
       ensure => 'present',
       source => 'puppet///modules/signacert/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       mode   => '0755',
       owner  => 'signacert',
       group  => 'wheel',
-  }
+    }
     exec { 'signa_tools_install'
       command   => 'tar -xzvf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz -C /opt; rm -rf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       require   => '/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       creates   => '/opt/signacert/jre/',
       logoutput => true,
-  }
-}    
+    }
+}
+}
