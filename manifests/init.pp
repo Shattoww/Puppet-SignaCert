@@ -47,7 +47,7 @@ class signacert {
     }
     file { '/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz':
       ensure => 'present',
-      source => 'puppet///modules/signacert/signacert_tools-5_8_0_2-linux_x64.tar.gz',
+      source => 'puppet:///modules/signacert/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       mode   => '0755',
       owner  => 'signacert',
       group  => 'wheel',
