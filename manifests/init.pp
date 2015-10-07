@@ -47,7 +47,7 @@ class signacert {
       owner  => 'signacert',
       group  => 'wheel',
     }
-    exec { 'signa_tools_install'
+    exec { 'signa_tools_install':
       command   => 'tar -xzvf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz -C /opt; rm -rf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       require   => '/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
       creates   => '/opt/signacert/jre/',
