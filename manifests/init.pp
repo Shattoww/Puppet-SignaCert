@@ -40,7 +40,7 @@ class signacert {
     }
     exec { 'signa_oval_install':
       command   => 'tar -xzvf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz -C /opt; rm -rf /tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
-      require   => '/tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz',
+      require   => File['/tmp/signacert_oval-5_8_0_2-rhel6_x64.tar.gz'],
       creates   => '/opt/signacert/signaclient/',
       logoutput => true,
     }
@@ -53,7 +53,7 @@ class signacert {
     }
     exec { 'signa_tools_install':
       command   => 'tar -xzvf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz -C /opt; rm -rf /tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
-      require   => '/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz',
+      require   => File['/tmp/signacert_tools-5_8_0_2-linux_x64.tar.gz'],
       creates   => '/opt/signacert/jre/',
       logoutput => true,
     }
