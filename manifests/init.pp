@@ -14,11 +14,15 @@
 class signacert {
   user { 'signacert':
     ensure     => 'present',
-    gid        => 'signacert',
-    groups     => ['wheel'],
+    groups     => ['signacert'],
     shell      => '/bin/bash',
     home       => '/home/signacert',
     managehome => true,
+	require    => Group['signacert'],
+  }
+
+  group { "signacert":
+    ensure => "present",
   }
   ssh_authorized_key { 'sigancert':
     ensure => 'present',
