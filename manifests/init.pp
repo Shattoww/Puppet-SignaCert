@@ -23,7 +23,7 @@ class signacert {
   ssh_authorized_key { 'sigancert':
     ensure => 'present',
     type   => 'ssh-rsa',
-    key    => 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAy5WxN4CcVdhLNkIU4eKsJJzyyPmXmnD+tAa4gkigLws/G0/jF8yNu8kZZlH9D44Z06Vf/7smX6GEb28IjF7892cfMszK19Yy4cH3gHD59wXUEPv/0ELeKJv2Efiusi55bFopdH8bgpvlgYHq2bto7IGLiyDH5Pad9QRiDH9i9B9fmVAYYITdb8x4ZlXBo3mfEJ4gfwo38a9ZBbSUO56kfu/iMPgvRZKepOsV1Ih3pkpnd4BdK/GDs6VSL3vbVly+U21Qg8zL3K5gJptTD2VudXLp95JdsQsKEzlhgUybAHsDwIZj6LZe5JXvvqWjwFZOlQlfHF42tN1BNd8kaWX5yQ== signacert@sd-staging-cardholder1.inside.globalcashcard.com',
+    key    => 'AAAAB3NzaC1yc2EAAAABIwAAAQEAy5WxN4CcVdhLNkIU4eKsJJzyyPmXmnD+tAa4gkigLws/G0/jF8yNu8kZZlH9D44Z06Vf/7smX6GEb28IjF7892cfMszK19Yy4cH3gHD59wXUEPv/0ELeKJv2Efiusi55bFopdH8bgpvlgYHq2bto7IGLiyDH5Pad9QRiDH9i9B9fmVAYYITdb8x4ZlXBo3mfEJ4gfwo38a9ZBbSUO56kfu/iMPgvRZKepOsV1Ih3pkpnd4BdK/GDs6VSL3vbVly+U21Qg8zL3K5gJptTD2VudXLp95JdsQsKEzlhgUybAHsDwIZj6LZe5JXvvqWjwFZOlQlfHF42tN1BNd8kaWX5yQ==',
     user   => 'signacert',
   }
   if $::signacertinstalled == false {
